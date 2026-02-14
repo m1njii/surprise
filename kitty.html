@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Kitty Musho 💗</title>
+    <link rel="shortcut icon" href="https://pngimg.com/d/hello_kitty_PNG22.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+    html { scroll-behavior: smooth; }
+
+    body{
+        margin:0;
+        font-family:'Segoe UI',sans-serif;
+        overflow-x:hidden;
+        background:#ffeef5;
+        color:#c2185b;
+        font-family: "Josefin Sans", sans-serif;
+    }
+
+    /* SECCIONES */
+
+    section{
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        padding:60px;
+        text-align:center;
+        position:relative;
+    }
+
+    h1{
+        font-size:3rem;
+        margin-bottom:20px;
+        opacity:0;
+        transform:translateY(40px);
+        transition:1s ease;
+    }
+
+    p{
+        max-width:950px;
+        font-size:1.3rem;
+        line-height:1.9;
+        opacity:0;
+        transform:translateY(40px);
+        transition:1.2s ease;
+    }
+
+    .visible h1,
+    .visible p{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    button{
+        margin-top:40px;
+        padding:14px 35px;
+        border:none;
+        border-radius:30px;
+        background:#ff69b4;
+        color:white;
+        font-size:1rem;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#ff1493;
+        transform:scale(1.08);
+    }
+
+    .bg1{background:#ffeef5;}
+    .bg2{background:#ffd6e8;}
+    .bg3{background:#ffc2dd;}
+    .bg4{background:#ffadd2;}
+    .bg5{background:#ff99c8;}
+    .bg6{background:#ff85bd;}
+
+    /* CORAZONES */
+
+    .heart{
+        position:fixed;
+        font-size:24px;
+        animation:floatUp 5s linear forwards;
+        pointer-events:none;
+    }
+
+    @keyframes floatUp{
+        from{transform:translateY(0);opacity:1;}
+        to{transform:translateY(-1000px);opacity:0;}
+    }
+
+    /* CARTA MUSHO */
+
+    .envelope{
+        width:220px;
+        height:150px;
+        background:#fff;
+        position:relative;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:30px;
+        transition:0.6s;
+    }
+
+    .envelope:before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#ffb6d9;
+        clip-path:polygon(0 0,50% 60%,100% 0);
+        transition:0.6s;
+    }
+
+    .letter{
+        position:absolute;
+        width:90%;
+        height:130px;
+        background:#fff0f8;
+        top:10px;
+        left:5%;
+        border-radius:8px;
+        padding:10px;
+        font-size:0.9rem;
+        opacity:0;
+        transform:translateY(20px);
+        transition:0.6s;
+        overflow:auto;
+    }
+
+    .envelope.open:before{
+        transform:rotateX(180deg);
+    }
+
+    .envelope.open .letter{
+        opacity:1;
+        transform:translateY(-140px);
+    }
+
+    /* COLLAGE */
+
+    .collage-section{
+        min-height:100vh;
+        height:auto;
+        padding-top:100px;
+        padding-bottom:100px;
+    }
+
+    .collage-text{
+        max-width:900px;
+        margin-bottom:50px;
+    }
+
+    .collage-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:20px;
+        width:90%;
+        max-width:1100px;
+    }
+
+    .photo{
+        overflow:hidden;
+        border-radius:20px;
+        box-shadow:0 10px 25px rgba(255,105,180,0.3);
+        transform:scale(0.95);
+        transition:0.5s ease;
+    }
+
+    .photo img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        transition:0.5s ease;
+    }
+
+    .photo:hover{
+        transform:scale(1.03);
+    }
+
+    .photo:hover img{
+        transform:scale(1.1);
+    }
+
+    .final-phrase{
+        margin-top:60px;
+        font-size:1.4rem;
+        font-weight:500;
+        max-width:800px;
+    }
+
+    .photo{
+        opacity:0;
+        transform:translateY(40px) scale(0.95);
+        transition:0.8s ease;
+    }
+
+    .visible.photo{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+
+    </style>
+    </head>
+    <body>
+    <section class="bg1">
+        <img src="https://www.pngall.com/wp-content/uploads/15/Hello-Kitty-Face-PNG-Image-HD.png" alt="Kitty" height="144px">
+        </div>
+        <h1>Feliz 14 de Febrero, Mi Kitty Musho 🎀</h1>
+        <p>
+            Dos años contigo no son una simple cifra…  
+            son 730 días llenos de risas, abrazos que curan, miradas que sostienen y sueños que se entrelazan.  
+
+            Desde que apareciste en mi vida, el mundo cambió de tono.  
+            Se volvió más suave, más rosado, más lleno de esperanza.  
+
+            Contigo entendí que el amor no es intensidad momentánea…  
+            es constancia, es elección diaria, es querer quedarse.
+        </p>
+        <button onclick="startMusic(); scrollToNext(this)">Siguiente</button>
+    </section>
+
+    <section class="bg2">
+        <h1>Nuestros Inicios 🍰</h1>
+        <p>
+            ¿Recuerdas aquellos días donde íbamos a la casa del otro y hacíamos postres?  
+            No eran simples recetas… eran pequeños pactos silenciosos.  
+
+            Entre harina en las manos y azúcar en el aire,  
+            construimos algo más grande que cualquier dulce:  
+            nuestra complicidad, nuestra química, nuestra forma tan única de ser equipo.  
+
+            Éramos dos personas aprendiendo a amar sin miedo,  
+            avanzando como un equipo feroz,  
+            sin temor a lo que venía,  
+            porque lo enfrentábamos juntos.
+        </p>
+        <button onclick="scrollToNext(this)">Siguiente</button>
+    </section>
+
+    <section class="bg3">
+        <h1>Los Mushos 🍫</h1>
+        <p>
+            Esos días cuando iba por ti en tus breaks…  
+            llevándote almuerzo como si fuera la misión más importante del mundo.  
+
+            Las risas dentro del carro, las conversaciones que parecían eternas aunque fueran minutos,  
+            y siempre… un chocolate escondido en mi mochila.  
+
+            Así nacieron los “mushos”.  
+            Pequeños detalles que se volvieron símbolo de nosotros.  
+
+            Pero lo más hermoso fue descubrir que tú también hacías lo mismo por mí.  
+            En Saga, saliendo de Mass, en cualquier lugar…  
+            porque el amor no era esperar recibir,  
+            era dar sin medida.
+        </p>
+        <button onclick="scrollToNext(this)">Siguiente</button>
+    </section>
+
+    <section class="bg4">
+        <h1>Minny and Cookies 🍪</h1>
+        <p>
+            Las noches de desvelo viendo series, compartiendo chucherías, soñando despiertos.  
+
+            Entre risas nació “Minny and Cookies”.  
+            No solo como un nombre…  
+            sino como una parte de nuestra esencia.  
+
+            Cada galleta llevaba dedicación, paciencia y amor.  
+            Como nosotros.  
+
+            Y sé que volverá con fuerza,  
+            porque los sueños que nacen del corazón  
+            no desaparecen… evolucionan.
+        </p>
+        <button onclick="scrollToNext(this)">Siguiente</button>
+    </section>
+
+    <section class="bg5">
+        <h1>El Momento que lo Cambió Todo 🎶</h1>
+        <p>
+            Esos pasillos.  
+            Ese instante.  
+
+            Yo cantando en la puerta del trabajo sin imaginar que alguien especial me observaba.  
+            Tal vez fue un momento sencillo…  
+            pero fue el inicio de algo eterno.  
+
+            Porque a veces el destino no llega con ruido,  
+            llega con una mirada que se queda.
+        </p>
+        <button onclick="scrollToNext(this)">Siguiente</button>
+    </section>
+
+    <section class="bg6">
+        <h1>Hoy, Mañana y Siempre 💗</h1>
+        <p>
+            Hoy seguimos aquí.  
+            Más fuertes. Más conscientes. Más enamorados.  
+
+            Mi Kitty Musho…  
+            mi compañera, mi inspiración, mi orgullo.  
+
+            Si estos dos años fueron hermosos,  
+            imagina lo que construiremos en el futuro.  
+
+            Porque el amor verdadero no se promete con palabras…  
+            se demuestra con presencia.
+        </p>
+
+        <button onclick="showHearts()">Te amo 💕</button>
+
+        <div class="envelope" onclick="openLetter(this)">
+            <div class="letter">
+                Gracias por cada abrazo, cada risa, cada musho compartido.  
+                Eres mi lugar seguro, mi calma y mi fuerza al mismo tiempo.  
+                Si la vida fuera una receta, tú serías mi ingrediente secreto favorito.  
+                Te amo más de lo que las palabras pueden medir.
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg1 collage-section">
+        <h1>Nuestra Historia en Recuerdos 📸💗</h1>
+        
+        <p class="collage-text">
+            Cada imagen guarda un instante que no volverá,
+            pero que vive eternamente en nosotros.
+            <br><br>
+            No son solo fotos…
+            son pedazos de tiempo donde fuimos felices,
+            donde crecimos,
+            donde aprendimos a amarnos mejor.
+            <br><br>
+            Y si algún día la memoria falla,
+            aquí estarán estos recuerdos
+            recordándonos que lo nuestro fue,
+            es y seguirá siendo real.
+        </p>
+
+        <div class="collage-grid">
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472223158441607168/IMG-20250320-WA0032.jpg?ex=6991ca29&is=699078a9&hm=f329522f8d16a18ddf86d34117d381ea19055180d1095ccc9fd9af95c0ad8044&"></div>
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472223158764437574/IMG-20241027-WA0002.jpg?ex=6991ca29&is=699078a9&hm=00e95e567a5f709e6174e9f7b397ba9e83fb95a90356266f5655660860e0bca7&"></div>
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472223159091597410/IMG-20250220-WA0068.jpg?ex=6991ca29&is=699078a9&hm=92147a912bf3d93408d8bd00152ff5523d364a12b8ddc1b8e20cbf10c4861ca8&"></div>
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472223159389520013/IMG-20250607-WA0099.jpg?ex=6991ca29&is=699078a9&hm=a19a2e8ddb6f3521b928ee0a01b35889fb4b11e13f324e210a8932de7b5c3b39&"></div>
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472223159678795887/IMG-20250626-WA0059.jpg?ex=6991ca29&is=699078a9&hm=638ee322e564695687c534d35da41857b00028474fe9f1c091903b85d1adecf8&"></div>
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472223160320528582/IMG-20250506-WA0034.jpg?ex=6991ca2a&is=699078aa&hm=f16a962b25d7c907e26e6afd6bbb26d1e2f06064b46fe8bc0e02402076051541&"></div>
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472226196568936478/IMG-20250722-WA0009.jpg?ex=6991ccfd&is=69907b7d&hm=fa898722e345d00f3d4b65fea283068b08bc1a0fcef6c2d24b7b4e4bba3f4431&"></div>
+            <div class="photo"><img src="https://cdn.discordapp.com/attachments/1470915612401209445/1472226197130842315/IMG-20241001-WA0076.jpg?ex=6991ccfe&is=69907b7e&hm=a9c2b88815f05015d1ca9cd34f5333b842c4cbfea104922c30e10788d1a55945&"></div>
+        
+        </div>
+
+        <p class="final-phrase">
+            💕 Si pudiera elegir mil veces…
+            mil veces volvería a encontrarte.
+            Porque contigo entendí que el amor
+            no es coincidencia,
+            es destino.
+        </p>
+    </section>
+
+    <script>
+
+    function scrollToNext(btn){
+        const next = btn.parentElement.nextElementSibling;
+        if(next) next.scrollIntoView({behavior:"smooth"});
+    }
+
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+            }
+        });
+    },{threshold:0.3});
+
+    sections.forEach(sec=>observer.observe(sec));
+
+    function showHearts(){
+        for(let i=0;i<120;i++){
+            const heart=document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML="💗";
+            heart.style.left=Math.random()*window.innerWidth+"px";
+            heart.style.top=window.innerHeight+"px";
+            heart.style.fontSize=(Math.random()*30+20)+"px";
+            document.body.appendChild(heart);
+            setTimeout(()=>heart.remove(),5000);
+        }
+    }
+
+    function openLetter(el){
+        el.classList.toggle("open");
+    }
+
+    document.querySelectorAll(".photo").forEach(photo=>{
+    observer.observe(photo);
+    });
+
+    </script>
+    </body>
+</html>
